@@ -5,23 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
     <script src="jquery.js"></script>
     <script src="scripts.js"></script>
     <title>chat app</title>
 </head>
 <body>
-    <a href="/about.html">About</a>
-    <a href="instructions.html">Instructions</a>
-    <br>
-    <h1>hello you are using a chatting app!!</h1>
-    <div id="login-div">
+
+    <div class="container">
+        <div class="row">
+
+        <div class="col text-left">
+            <button><a href="/about.html">About</a></button>
+        </div>
+
+        <div class="col text-right">
+            <button><a href="/instructions.html">Instructions</a></button>
+        </div>
+        </div>
+    </div>
+
+    <h1 class="text-center">hello you are using a chatting app!!</h1>
+    <div id="login-div" class="text-center">
         <input placeholder="enter username" id="loginbox"type="text">
         <button id="loginbtn">Login</button>
     </div>
+
     <div id="chat-div">
-        <input placeholder="type message" id="chatbox" type="text">
-        <button id="chatbtn">Send</button>
-        <ul id="ul"></ul>
+        <div class="text-center">
+            <input class="text-center" placeholder="type message" id="chatbox" type="text">
+            <button class="text-center" id="chatbtn">Send</button>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col" class="text-left">
+                    <h3>Received messages</h3>
+                    <ul class="text-left" id="ul-receive"></ul>
+                </div>
+                <div class="col">
+                    <h3>sent messages</h3>
+                    <ul id="ul-sent"></ul>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 </body>

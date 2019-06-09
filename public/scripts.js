@@ -9,7 +9,8 @@ socket.on('connected',()=>{
 $(function() {
     let msg=$("#chatbox")
     let msgbtn=$("#chatbtn")
-    let ul=$("#ul")
+    let ulr=$("#ul-receive")
+    let uls=$("#ul-sent")
 
     let login=$("#loginbox")
     let loginbtn=$("#loginbtn")
@@ -29,6 +30,15 @@ $(function() {
         })
     })
     msgbtn.click(()=>{
+        let message=msg.val()
+        if(message.startsWith("@")){
+            let receiver=message.split(":")[0].substr(1)
+            let actual_message=message.split(":")[1]
+            uls.append($('<li>'+ "To " + receiver + ": " + actual_message + '</li>'))
+        }
+        else{
+            uls.append($('<li>'+ "Broadcasted: " + message + '</li>'))
+        }
         console.log("button clicked !")
         socket.emit('send-msg',{
             user : username,
@@ -36,7 +46,7 @@ $(function() {
     })
 
     socket.on('received-msg', (data)=>{
-        ul.append($('<li>' +  data.user+ ": " + data.message + '</li>'))
+        ulr.append($('<li>' +  data.user+ ": " + data.message + '</li>'))
     })
 
 })

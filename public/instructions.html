@@ -4,21 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <title>instructions page</title>
 </head>
 <body>
-    <a href="/">Home</a>
-    <a href="about.html">About</a>
+    <div class="container">
+            <div class="row">
+        
+                <div class="col text-left">
+                   <button> <a href="/">Home</a> </button>
+                </div>
+        
+                <div class="col text-right"
+                
+                >
+                   <button> <a href="/about.html">About</a> </button>
+                </div>
+                </div>
     <br>
     <h1>hello this is a instructions page</h1>
     <ul>
         <li>Please give a username before starting, receivers will get message in form of "sender's_username: actual_message"</li>
-        <li>messages sent by you are received by all members on site if they are online</li>
-        <li>if members are not online(browsers not having a chat tab), they will not receive message</li>
+        
+        <li>chat page consists of two columns, one for received messages, one for sent messages</li>
+        <li>if messages are sent without using "@receiver_username:" , then they will be broadcasted
+     to all online users and will be logged as "broadcasted: actual message" in sent messages column,
+    else it will be sent only to "receiver_username" and will be logged as 
+    "To receiver_username: actual_message" in sent messages column</li>
+
+        <li>messages "Broadcasted" by you are received by all members on site if they are online</li>
+        
+        <li>if members are not online(browsers not having a chat tab), they will not receive message(no sync),
+             else they will receive them under received messages column
+        </li>
         <li>message of this form "@username:actual_message" is received only by user with username as "username"
-            in form like "sender: actual_message"
+            in form like "sender's_username: actual_message"
         </li>
     </ul>
     <h2>let's chat</h2>
+    </div>
 </body>
 </html>
